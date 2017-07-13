@@ -57,7 +57,11 @@ var Main    = {
         'password': this.formData.password
       });
       localStorage.setItem(storageName, JSON.stringify(arrayList));
-      console.log(arrayList);
+    },
+    allClear: function () {
+      arrayList = [];
+      messageList.arrayItems = arrayList;
+      localStorage.removeItem(storageName);
     }
   }
 };
