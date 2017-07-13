@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+  <link rel="stylesheet" href="bbs.css">
 </head>
 <body>
 <div id="app">
@@ -28,19 +29,33 @@
     <el-form-item>
       <el-button type="primary" @click="submitForm('formData')">Send</el-button>
       <el-button @click="resetForm('formData')">Reset</el-button>
+      <el-button @click="allClear">AllClear</el-button>
     </el-form-item>
   </el-form>
 </div>
 
 <div id="message-box">
-  <ol>
-    <li v-for="item in arrayItems">
-      {{item.name}}
-      {{item.delivery}}
-      {{item.title}}
-      {{item.email}}
-      {{item.message}}
-    </li>
+  <ol v-for="item in arrayItems">
+    <el-row>
+      <el-col :span="12"><div class="grid-content bg-purple">お名前</div></el-col>
+      <el-col :span="12"><div class="grid-content bg-purple-light">{{item.name}}</div></el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12"><div class="grid-content bg-purple">チェック</div></el-col>
+      <el-col :span="12"><div class="grid-content bg-purple-light">{{item.delivery}}</div></el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12"><div class="grid-content bg-purple">タイトル</div></el-col>
+      <el-col :span="12"><div class="grid-content bg-purple-light">{{item.title}}</div></el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12"><div class="grid-content bg-purple">e-mail</div></el-col>
+      <el-col :span="12"><div class="grid-content bg-purple-light">{{item.email}}</div></el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12"><div class="grid-content bg-purple">メッセージ</div></el-col>
+      <el-col :span="12"><div class="grid-content bg-purple-light">{{item.message}}</div></el-col>
+    </el-row>
   </ol>
 </div>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
