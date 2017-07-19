@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>routing</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<script src="http://cdn.jsdelivr.net/vue/0.12.10/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.router/0.5.2/vue-router.min.js"></script>
+
+<div id="app">
+  <div>
+    <a v-link="/hoge">hogeへ</a>
+    <a v-link="/fuga">fugaへ</a>
+    <router-view></router-view>
+  </div>
+
+  <div id="hoge" style="display:none;">
+    hoge page
+  </div>
+
+  <div id="fuga" style="display:none;">
+    fuga page
+  </div>
+</div>
+
+<script src="routing-sample2.js"></script>
+</body>
+</html>
